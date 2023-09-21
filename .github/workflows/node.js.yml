@@ -49,9 +49,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: amondnet/vercel-action@v20
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID}} 
           vercel-project-id: ${{ secrets.PROJECT_ID}}
-          vercel-args: "--prod"
